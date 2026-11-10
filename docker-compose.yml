@@ -1,0 +1,14 @@
+services:
+  pdf-studio:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    ports: ["8000:8000"]
+    environment:
+      SECRET_KEY: ${SECRET_KEY:?set SECRET_KEY in your environment or a .env file}
+      CORS_ORIGINS: ${CORS_ORIGINS:-http://localhost:8000}
+    volumes:
+      - pdfstudio-data:/data
+    restart: unless-stopped
+volumes:
+  pdfstudio-data:

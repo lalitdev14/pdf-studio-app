@@ -1,0 +1,22 @@
+# Render Blueprint for the PDF Studio API (FastAPI + LibreOffice/Tesseract/Poppler in Docker).
+# The frontend is deployed separately on Vercel (root directory: frontend).
+services:
+  - type: web
+    name: pdf-studio-api
+    runtime: docker
+    plan: free
+    dockerfilePath: ./backend/Dockerfile
+    dockerContext: .
+    healthCheckPath: /api/health
+    envVars:
+      - key: PORT
+        value: "8000"
+      - key: SECRET_KEY
+        generateValue: true
+      - key: TRUST_PROXY
+        value: "true"
+      - key: MAX_WORKERS
+        value: "2"
+      # Set this to your Vercel site URL(s), comma-separated, e.g. https://pdf-studio.vercel.app
+      - key: CORS_ORIGINS
+        sync: false

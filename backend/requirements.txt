@@ -1,0 +1,20 @@
+fastapi>=0.115
+uvicorn[standard]>=0.30
+python-multipart>=0.0.12
+starlette>=0.40
+pydantic>=2.6
+pypdf>=5.0
+pikepdf>=9.0
+Pillow>=10.4
+pillow-heif>=0.18
+pdf2image>=1.17
+pytesseract>=0.3.13
+reportlab>=4.2
+pdfplumber>=0.11
+python-docx>=1.1
+python-pptx>=1.0
+openpyxl>=3.1
+cryptography>=43
+# Optional – enable extra features (see README):
+#   PyMuPDF>=1.24   true "edit existing text" (AGPL licence – check it suits your use)
+#   pyhanko>=0.25   cryptographic (certificate) signatures
